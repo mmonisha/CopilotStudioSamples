@@ -1,0 +1,49 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName:
+    triggerQueries:
+      - order pizza
+      - I want to order a pizza
+      - pizza delivery
+      - can I get a pizza?
+      - place a pizza order
+      - get me a pizza
+      - pizza menu
+      - how to order pizza?
+      - I'd like to order some pizza
+
+  actions:
+    - kind: Question
+      id: Question_g4LC9g
+      variable: Topic.PizzaType
+      prompt: What type of pizza would you like to order?
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          optionSetName: PizzaTypeOptions
+          items:
+            - id: margherita
+              displayName: Margherita
+
+            - id: pepperoni
+              displayName: Pepperoni
+
+            - id: veggie
+              displayName: Veggie
+
+            - id: bbq_chicken
+              displayName: BBQ Chicken
+
+    - kind: Question
+      id: Question_fwaJ2x
+      variable: Topic.PizzaQuantity
+      prompt: How many pizzas would you like to order?
+      entity: NumberPrebuiltEntity
+
+    - kind: SendActivity
+      id: SendActivity_hVNhnx
+      activity: You have ordered {Topic.PizzaQuantity} {Topic.PizzaType} pizza(s). Thank you for your order!
