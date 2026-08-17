@@ -7,7 +7,7 @@ beginDialog:
   actions:
     - kind: SendActivity
       id: sendActivity_4gh1Cv
-      activity: "{System.Activity.Value}"
+      activity: "Debug (remove for production) - invoke payload received: {System.Activity.Value}"
 
     - kind: ParseValue
       id: 3TJax1

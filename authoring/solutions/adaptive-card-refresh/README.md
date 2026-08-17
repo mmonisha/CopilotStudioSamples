@@ -34,7 +34,11 @@ replacement card that Teams swaps in place.
    that node uses `Action.Submit` internally and won't trigger the invoke/refresh flow.
 3. **Listen for the invoke.** A topic triggered by **Invoke Received** parses the
    activity payload and reads `resultData.action.verb`.
-4. **Return a replacement card.** The listener branches on the verb and returns the
+4. **See the raw payload (debug).** The listener's first action sends the invoke
+   payload back as a message, prefixed with `Debug (remove for production)`, so you
+   can inspect the verb and submitted form data while learning. Delete this
+   `SendActivity` node before shipping so submitted values are not shown as raw chat.
+5. **Return a replacement card.** The listener branches on the verb and returns the
    Universal Action response format, and Teams replaces the original card in place:
 
    ```json
@@ -44,6 +48,12 @@ replacement card that Teams swaps in place.
      "value": { "type": "AdaptiveCard": "..." }
    }
    ```
+
+{: .note }
+> The `Debug (remove for production)` message in `CardListenerV2` is intentional for
+> learning: it surfaces the raw Universal Action payload (verb + form data) so you can
+> see what the invoke carries. Remove that first `SendActivity` node before you publish
+> the agent, otherwise submitted ratings and comments appear as a raw chat message.
 
 ## What's in the solution
 
