@@ -30,8 +30,8 @@ replacement card that Teams swaps in place.
    uses `Action.Execute` with a unique `verb` (for example `feedbackSubmitForm` and
    `feedbackSkipForm`) and `"fallback": "Action.Submit"` for clients that don't
    support Universal Actions.
-2. **Display it with a "Send a message" node.** Do not use "Ask with Adaptive Card" —
-   that node uses `Action.Submit` internally and won't trigger the invoke/refresh flow.
+2. **Display it with a "Send a message" node.** Do not use "Ask with Adaptive Card",
+   because that node uses `Action.Submit` internally and won't trigger the invoke/refresh flow.
 3. **Listen for the invoke.** A topic triggered by **Invoke Received** parses the
    activity payload and reads `resultData.action.verb`.
 4. **See the raw payload (debug).** The listener's first action sends the invoke
@@ -62,8 +62,20 @@ replacement card that Teams swaps in place.
 | `CaptureFeedbackV2` | Displays the survey Adaptive Card (`Action.Execute` buttons) |
 | `CardListenerV2` | Listens for the invoke activity and returns the replacement card |
 
+The package also contains the default Copilot Studio system topics (Conversation Start,
+Greeting, Escalate, Fallback, and so on), unchanged from a new agent.
+
 Unpacked source (PnP format) is in [`sourcecode/`](https://github.com/microsoft/CopilotStudioSamples/tree/main/authoring/solutions/adaptive-card-refresh/sourcecode); the importable
 package is in [`solution/`](https://github.com/microsoft/CopilotStudioSamples/tree/main/authoring/solutions/adaptive-card-refresh/solution).
+
+## Prerequisites
+
+- A Power Platform environment with Microsoft Copilot Studio enabled.
+- Permission to import solutions at [make.powerapps.com](https://make.powerapps.com).
+- A Microsoft Teams channel to test the invoke/refresh flow.
+
+No connection references or environment variables are required; the solution contains
+only topics.
 
 ## Importing
 
