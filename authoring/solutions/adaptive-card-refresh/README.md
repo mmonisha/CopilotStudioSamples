@@ -21,7 +21,7 @@ replacement card that Teams swaps in place.
 
 {: .note }
 > **Attribution.** This solution was authored by **Nghiem Doan** and is included here
-> under its original MIT license (see [`LICENSE`](./LICENSE)). Original repository:
+> under its original MIT license (see [`LICENSE`](https://github.com/microsoft/CopilotStudioSamples/blob/main/authoring/solutions/adaptive-card-refresh/LICENSE)). Original repository:
 > [nghiemdoan-msft/AdaptiveCardInCopilotStudio](https://github.com/nghiemdoan-msft/AdaptiveCardInCopilotStudio).
 
 ## How it works
@@ -45,7 +45,7 @@ replacement card that Teams swaps in place.
    {
      "statusCode": 200,
      "type": "application/vnd.microsoft.card.adaptive",
-     "value": { "type": "AdaptiveCard": "..." }
+     "value": { "type": "AdaptiveCard", "body": [] }
    }
    ```
 
@@ -62,12 +62,12 @@ replacement card that Teams swaps in place.
 | `CaptureFeedbackV2` | Displays the survey Adaptive Card (`Action.Execute` buttons) |
 | `CardListenerV2` | Listens for the invoke activity and returns the replacement card |
 
-Unpacked source (PnP format) is in [`sourcecode/`](./sourcecode/); the importable
-package is in [`solution/`](./solution/).
+Unpacked source (PnP format) is in [`sourcecode/`](https://github.com/microsoft/CopilotStudioSamples/tree/main/authoring/solutions/adaptive-card-refresh/sourcecode); the importable
+package is in [`solution/`](https://github.com/microsoft/CopilotStudioSamples/tree/main/authoring/solutions/adaptive-card-refresh/solution).
 
 ## Importing
 
-1. Download [`solution/FeedbackAgent_1_0_0_5.zip`](./solution/FeedbackAgent_1_0_0_5.zip).
+1. Download [`solution/FeedbackAgent_1_0_0_5.zip`](https://github.com/microsoft/CopilotStudioSamples/blob/main/authoring/solutions/adaptive-card-refresh/solution/FeedbackAgent_1_0_0_5.zip).
 2. Go to [make.powerapps.com](https://make.powerapps.com) > **Solutions** > **Import solution**.
 3. Select the zip, then **Next** > **Import**.
 4. Open the imported **FeedbackAgent** in Copilot Studio and **Publish** it.
