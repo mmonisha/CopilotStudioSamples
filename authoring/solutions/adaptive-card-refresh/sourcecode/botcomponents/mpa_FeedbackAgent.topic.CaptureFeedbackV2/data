@@ -4,7 +4,7 @@ beginDialog:
   kind: OnRecognizedIntent
   id: main
   intent:
-    displayName: Untitled (Copy)
+    displayName: Capture Feedback
 
   actions:
     - kind: SendActivity

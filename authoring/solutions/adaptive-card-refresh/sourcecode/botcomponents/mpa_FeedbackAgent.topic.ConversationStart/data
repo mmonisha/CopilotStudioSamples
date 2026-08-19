@@ -7,9 +7,9 @@ beginDialog:
       id: sendMessage_M0LuhV
       activity:
         text:
-          - Hello, I'm {System.Bot.Name}, a virtual assistant. Just so you are aware, I sometimes use AI to answer your questions. If you provided a website during creation, try asking me about it! Next try giving me some more knowledge by setting up generative AI.
+          - "Hi! This agent shows how to refresh an Adaptive Card after it is submitted in Teams. Pick an option below to try it."
         speak:
-          - Thanks for calling, how can I help?
+          - Hi! This agent shows how to refresh an Adaptive Card after it is submitted in Teams.
 
     - kind: SendActivity
       id: sendActivity_giqeBX
@@ -26,7 +26,7 @@ beginDialog:
                           "type": "TextBlock",
                           "size": "Medium",
                           "weight": "Bolder",
-                          "text": "Test Card Multiple Options",
+                          "text": "Feedback demo",
                           "horizontalAlignment": "Center",
                           "wrap": true,
                           "style": "heading"
@@ -37,16 +37,6 @@ beginDialog:
                           "type": "Action.Submit",
                           "title": "Take a survey",
                           "data": "Take a survey"
-                      },
-                      {
-                          "type": "Action.Submit",
-                          "title": "Order a pizza",
-                          "data": "Order a pizza"
-                      },
-                      {
-                          "type": "Action.Submit",
-                          "title": "Start over",
-                          "data": "Start over"
                       }
                   ]
               }
